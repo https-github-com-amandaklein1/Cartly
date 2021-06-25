@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3000;
-const morgan = require("morgan");
-
+const morgan = require('morgan');
+const database = require('./database/connection.js');
 
 app.use(morgan('dev'));
 app.use(express.json());
