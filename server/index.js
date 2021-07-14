@@ -1,4 +1,5 @@
 const express = require('express');
+
 const axios = require('axios');
 const {API_TOKEN} = require('../config.js');
 
@@ -8,6 +9,9 @@ const productsRoutes = require('./routes/products.js');
 // const cartRoutes = require('./routes/cart.js');
 const reviewsRoutes = require('./routes/reviews.js');
 
+
+// Database Connection to be used for queries
+const database = require('./database/connection.js');
 
 const app = express();
 const PORT = 3000;
