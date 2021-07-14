@@ -1,15 +1,30 @@
 const express = require('express');
+const axios = require('axios');
+const {API_TOKEN} = require('../config.js');
+
+// const homeRoute = require('./routes/home.js');
+// const startRoute = require('./routes/start.js');
+const productsRoutes = require('./routes/products.js');
+// const cartRoutes = require('./routes/cart.js');
+const reviewsRoutes = require('./routes/reviews.js');
+
+
 const app = express();
-const path = require('path');
-const port = 3000;
-const morgan = require("morgan");
+const PORT = 3000;
 
-
-app.use(morgan('dev'));
 app.use(express.json());
+app.use('/', express.static("dist"));
 
-app.use(express.static(path.join(__dirname, '..', 'dist')));
 
-app.listen(port, () => {
-  console.log(`listening on Port:${port}`)
-});
+///// ROUTES /////
+app.use('*/products', productsRoutes);
+// app.use('*/cart', cartRoutes);
+app.use('*/reviews/', reviewsRoutes);
+
+app.use('/:productId', express.static("dist")); // catch-all
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on ${PORT}`);
+})
+
+module.exports = app;
