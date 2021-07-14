@@ -50,7 +50,7 @@ const App = ({ match }) => {
           <div className="rightSide">
             <div className="styleInfoAndThumbs">
               {/* <StyleListContainer /> */}
-              hellooo
+              helloooo
             </div>
             <div>
               {/* <CartContainer /> */}
