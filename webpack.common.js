@@ -1,15 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const config = {
+module.exports = {
   entry: [
     'react-hot-loader/patch',
     './src/index.js'
   ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
   module: {
     rules: [
       {
@@ -47,5 +43,3 @@ const config = {
     contentBase: './dist'
   }
 };
-
-module.exports = config;
