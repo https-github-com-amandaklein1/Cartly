@@ -3,10 +3,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
-// import rootReducer from '../reducers/main';
+import rootReducer from '../reducers/main';
 
 const preloadedState = {
-  styleList: {
+  colorsOfProduct: {
     product_id: '11001',
     results: [
       {
@@ -257,7 +257,7 @@ const preloadedState = {
       }
     ]
   },
-  thumbnails: {
+  color: {
     style_id: 51163,
     name: 'Dark Grey & Black',
     original_price: '170.00',
