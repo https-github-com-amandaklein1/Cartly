@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import currentProduct from '../src/components/currentProduct';
-import changeColor from '../actions/changeColor';
+import mainProductVisual from '../src/components/mainProductVisual';
+import changeProduct from '../actions/changeProduct';
 
 const mapStateToProps = (state) => ({
-  styles: state.colorsOfProduct
+  id: state.colorsOfProduct.product_id
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleColorChange: (style) => {
-    dispatch(changeColor(style));
+  handleProductChange: (style) => {
+    dispatch(changeProduct(style));
   }
 });
 
-const changeProductContainer = connect(mapStateToProps, mapDispatchToProps)(currentProduct);
+const changeProductContainer = connect(mapStateToProps, mapDispatchToProps)(mainProductVisual);
 
 export default changeProductContainer;
